@@ -994,6 +994,7 @@ MonoBehaviour:
   fifthPosition: {fileID: 8834352630998948068}
   neededUI: {fileID: 5444839020089836003}
   canBeLevelThree: 1
+  canBeLevelTwo: 1
   productAmount: 5
   productCount: 0
   productTime: 10

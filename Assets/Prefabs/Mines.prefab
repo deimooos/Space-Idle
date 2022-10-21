@@ -615,6 +615,104 @@ Transform:
   m_Father: {fileID: 6003181784626306849}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2391863128429493516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 871580916299853275}
+  - component: {fileID: 1172413163800833046}
+  - component: {fileID: 4742649222131747459}
+  - component: {fileID: 4247725838548752625}
+  m_Layer: 0
+  m_Name: Black
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &871580916299853275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391863128429493516}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.18169999, y: 2.0135999, z: 0.64000034}
+  m_LocalScale: {x: 0.30515233, y: 0.95, z: 0.4407492}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1988463560364425848}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &1172413163800833046
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391863128429493516}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4742649222131747459
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391863128429493516}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 797c7af0fed25ee499dbb2aacd6b5713, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4247725838548752625
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391863128429493516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2800072688643459887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1150,7 @@ MonoBehaviour:
   fifthPosition: {fileID: 3522872896105719810}
   neededUI: {fileID: 6003181784567406149}
   canBeLevelThree: 1
+  canBeLevelTwo: 1
   productAmount: 5
   productCount: 0
   productTime: 10
@@ -1758,8 +1857,13 @@ PrefabInstance:
     - target: {fileID: 1809042458257043884, guid: 30e45ed05d3cf2d43952ec82747f12ea,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3087825308998359602, guid: 30e45ed05d3cf2d43952ec82747f12ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 917fd35465c5a134dab424bf8016f28a, type: 2}
     - target: {fileID: 3987963832934971070, guid: 30e45ed05d3cf2d43952ec82747f12ea,
         type: 3}
       propertyPath: m_IsActive
@@ -1770,6 +1874,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6544971289171462049, guid: 30e45ed05d3cf2d43952ec82747f12ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a85dc6b8f72487e4b8b68489aec805f7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e45ed05d3cf2d43952ec82747f12ea, type: 3}
 --- !u!4 &4692544300631288209 stripped
@@ -1902,6 +2011,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6003181784270234694}
     m_Modifications:
+    - target: {fileID: 3686720648485701990, guid: 67053b5bf03fb924e9ccb9de1af70ffe,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a85dc6b8f72487e4b8b68489aec805f7, type: 2}
     - target: {fileID: 4871830164269866302, guid: 67053b5bf03fb924e9ccb9de1af70ffe,
         type: 3}
       propertyPath: m_Name
@@ -2000,6 +2114,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6003181784270234694}
     m_Modifications:
+    - target: {fileID: 353782026797922719, guid: 511f8d8e24671544aa4b229d6ebe26ad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a85dc6b8f72487e4b8b68489aec805f7, type: 2}
     - target: {fileID: 5127217140654772114, guid: 511f8d8e24671544aa4b229d6ebe26ad,
         type: 3}
       propertyPath: m_Name
@@ -2065,6 +2184,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8423598921800606732, guid: 511f8d8e24671544aa4b229d6ebe26ad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 917fd35465c5a134dab424bf8016f28a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 511f8d8e24671544aa4b229d6ebe26ad, type: 3}
 --- !u!1 &1470459182540189466 stripped
