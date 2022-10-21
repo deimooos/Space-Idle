@@ -14,6 +14,6 @@ public class CustomerUIAmount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = "X"+transform.parent.parent.parent.GetComponent<Customer>().wantedAmount.ToString();
+        GetComponent<Text>().text = "X"+transform.parent.parent.parent.parent.GetComponent<Customer>().wantedAmount.ToString();
     }
 }

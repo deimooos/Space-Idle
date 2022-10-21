@@ -17,7 +17,7 @@ public class CustomerUIProduct : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (transform.parent.parent.parent.GetComponent<Customer>().randomOrder)
+        switch (transform.parent.parent.parent.parent.GetComponent<Customer>().randomOrder)
         {
             case 0:
                 GetComponent<Image>().sprite = crystal;
