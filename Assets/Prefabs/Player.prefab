@@ -335,7 +335,7 @@ MonoBehaviour:
   seeThroughBorderColor: {r: 0, g: 0, b: 0, a: 1}
   seeThroughBorderWidth: 0.45
   seeThroughOrdered: 0
-  rmsCount: 4
+  rmsCount: 1
   hitFxInitialIntensity: 0
   hitFxMode: 0
   hitFxFadeOutDuration: 0.25
@@ -1327,6 +1327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AstronautHelmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 326303451124199502, guid: a4dac440837c0544d8643eba2f51743f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1138447456624552692, guid: a4dac440837c0544d8643eba2f51743f,
         type: 3}

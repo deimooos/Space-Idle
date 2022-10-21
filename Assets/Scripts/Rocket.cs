@@ -45,6 +45,7 @@ public class Rocket : MonoBehaviour
         // GlobalSettings.scr.player.GetComponent<MeshRenderer>.SetActive(true);
         CameraFollow.scr.Offset.x = 0;
         GameObject.Find("Player").transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().enabled = true ;
+        GameObject.Find("Player").transform.GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
         CharacterMove.scr.enabled = true;
         CameraFollow.scr.targetC = false;
         elapsedTime = 0;
