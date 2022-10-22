@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
+    public bool isWaiting = false;
+    public int level1needed;
+    public int level2needed;
+    public int level3needed;
+    public GameObject slider;
     public List<GameObject> products;
     public GameObject food;
     public GameObject drink;
@@ -41,6 +47,10 @@ public class Building : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        level1needed = neededWood + neededRock;
+        level2needed = neededWoodLv2 + neededRockLv2;
+        level3needed = neededWoodLv3 + neededRockLv3;
+
         switch (type)
         {
             case buildType.Mine:
@@ -130,21 +140,25 @@ public class Building : MonoBehaviour
     {
         if (level == 1 && !canBeLevelTwo)
         {
+           
             transform.GetComponent<Collider>().enabled = false;
             neededUI.SetActive(false);
         }
         if (level == 2 && !canBeLevelThree)
         {
+            
             transform.GetComponent<Collider>().enabled = false;
             neededUI.SetActive(false);
         }
         if (level == 3)
         {
+            
             transform.GetComponent<Collider>().enabled = false;
             neededUI.SetActive(false);
         }
         if (neededWood<=0 && neededRock <=0 && level==0)
         {
+
             level = 1;
         }
         else if (neededWoodLv2<=0 && neededRockLv2 <=0 && level==1)
@@ -155,14 +169,20 @@ public class Building : MonoBehaviour
         {
             level = 3;
         }
-        if (level==1)
+        if (level==0)
         {
+              slider.GetComponent<Slider>().value =(float) (level1needed-(neededWood + neededRock))/level1needed;
+        }
+        else if (level==1)
+        {
+            slider.GetComponent<Slider>().value = (float)(level2needed-(neededWoodLv2 + neededRockLv2))/level2needed ;
             transform.GetChild(0).gameObject.SetActive(true);
             productAmount = 5;
             productTime = 5;
         }
         else if (level==2)
         {
+            slider.GetComponent<Slider>().value = (float)(level3needed - (neededWoodLv3 + neededRockLv3))/level3needed;
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(true);
             productAmount = 10;
@@ -170,6 +190,7 @@ public class Building : MonoBehaviour
         }
         else if (level==3)
         {
+         
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(true);
             productAmount = 20;
@@ -188,11 +209,13 @@ public class Building : MonoBehaviour
                 productElapsetTime += Time.deltaTime;
             }
         }
+
     }
     IEnumerator wait()
     {
-        if (GlobalSettings.scr.carries[0] != null)
+        if (GlobalSettings.scr.carries[0] != null && !isWaiting)
         {
+            isWaiting = true;
             for (int i = GlobalSettings.scr.carries.Count - 1; i >= 0; i--)
             {
                 if (GlobalSettings.scr.carries.Count>0)
@@ -203,13 +226,15 @@ public class Building : MonoBehaviour
                         {
                             StartCoroutine(give(GlobalSettings.scr.carries[i]));
                             neededWood--;
+                            yield return new WaitForSeconds(0.1f);
+
 
                         }
                         else if (!GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededRock > 0)
                         {
                             StartCoroutine(give(GlobalSettings.scr.carries[i]));
                             neededRock--;
-
+                            yield return new WaitForSeconds(0.1f);
                         }
                     }
                     if (level == 1)
@@ -218,13 +243,13 @@ public class Building : MonoBehaviour
                         {
                             StartCoroutine(give(GlobalSettings.scr.carries[i]));
                             neededWoodLv2--;
-
+                            yield return new WaitForSeconds(0.1f);
                         }
                         else if (!GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededRockLv2 > 0)
                         {
                             StartCoroutine(give(GlobalSettings.scr.carries[i]));
                             neededRockLv2--;
-
+                            yield return new WaitForSeconds(0.1f);
                         }
                     }
                     if (level == 2)
@@ -233,20 +258,20 @@ public class Building : MonoBehaviour
                         {
                             StartCoroutine(give(GlobalSettings.scr.carries[i]));
                             neededWoodLv3--;
-
+                            yield return new WaitForSeconds(0.1f);
                         }
                         else if (!GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededRockLv3 > 0)
                         {
                             StartCoroutine(give(GlobalSettings.scr.carries[i]));
                             neededRockLv3--;
-
+                            yield return new WaitForSeconds(0.1f);
 
                         }
                     }
                 }
                     //StartCoroutine(give(GlobalSettings.scr.carries[i]));
                     yield return new WaitForSeconds(0.15f);
-                
+                isWaiting = false;
             }
         }
         yield return null;
@@ -257,7 +282,7 @@ public class Building : MonoBehaviour
         buildObject.transform.parent = LogPool.SharedInstance.transform;
         float elapsetTime = 0;
         float waitTime = 0.5f;
-        Vector3 startPos = buildObject.transform.position;
+        Vector3 startPos = buildObject.transform.position+Vector3.up*3.5f;
         Vector3 endPos = productTarget.transform.position;
         while (elapsetTime < waitTime)
         {

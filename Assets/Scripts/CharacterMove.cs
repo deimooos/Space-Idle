@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.UI;
 public class CharacterMove : MonoBehaviour
 {
     public static CharacterMove scr;
@@ -15,9 +14,9 @@ public class CharacterMove : MonoBehaviour
     public GameObject axe;
     public GameObject pickaxe;
     public GameObject carrier;
+    public GameObject capacityText;
+    public GameObject carryText;
 
-    
-     
 
     void Awake()
     {
@@ -81,9 +80,36 @@ public class CharacterMove : MonoBehaviour
 
             rb.velocity = Vector3.zero;
         }
+        if(GlobalSettings.scr.carryAmount==carrier.transform.childCount)
+        {
+            carryText.GetComponent<Text>().text = "   MAX";
+            capacityText.GetComponent<Text>().text = "";
+            carryText.GetComponent<Text>().color = Color.red;
+        }
+        else
+        {
+            carryText.GetComponent<Text>().color = Color.white;
+            capacityText.GetComponent<Text>().text = GlobalSettings.scr.carryAmount.ToString();
 
+            carryText.GetComponent<Text>().text = carrier.transform.childCount.ToString() + "/";
+        }
+
+        
+
+        Vector3 temp;
+        temp = carryText.transform.parent.transform.localEulerAngles;
+        carryText.transform.parent.transform.LookAt(Camera.main.transform);
+        temp.y = carryText.transform.parent.transform.localEulerAngles.y+180;
+        carryText.transform.parent.transform.localEulerAngles = temp;
+        
+        /*carryText.transform.LookAt(Camera.main.transform);
+        capacityText.transform.LookAt(Camera.main.transform);*/
+
+        
 
 
     }
-    
+
+
+
 }

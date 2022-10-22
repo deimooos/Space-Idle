@@ -15,7 +15,7 @@ public class RocketFire : MonoBehaviour
     {
         if (GlobalSettings.scr.gameFinished)
         {
-            GetComponent<ParticleSystem>().Play();
+            GetComponent<ParticleSystem>().enableEmission=true;//GetComponent<ParticleSystem>().Play();
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deliver : MonoBehaviour
+/*public class Deliver : MonoBehaviour
 {
     public static Deliver scr;
     public bool isLanded = false;
@@ -58,9 +58,10 @@ public class Deliver : MonoBehaviour
         if (isLanded == true)
         {
             transform.parent.GetChild(1).gameObject.SetActive(true);
-        }*/
+        }
         yield return null;
     }
     
     
 }
+*/

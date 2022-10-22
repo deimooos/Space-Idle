@@ -12,7 +12,7 @@ public class MarketField : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (!Deliver.scr.isLanded && !CharacterMove.scr.isRunning)
+       // if (!Deliver.scr.isLanded && !CharacterMove.scr.isRunning)
         {
             if(isOpened==false)
             {
@@ -27,9 +27,9 @@ public class MarketField : MonoBehaviour
     {
         isOpened = false;
         GlobalSettings.scr.marketCanvas.SetActive(false);
-        if(Order.scr.totalCount>0 && !Deliver.scr.isLanded)
+        //if(Order.scr.totalCount>0 && !Deliver.scr.isLanded)
         {
-            Deliver.scr.startDeliver();
+            //Deliver.scr.startDeliver();
         }
     }
     // Update is called once per frame

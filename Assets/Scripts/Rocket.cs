@@ -5,6 +5,7 @@ using StandardAssets;
 
 public class Rocket : MonoBehaviour
 {
+    public ParticleSystem fire;
     public static Rocket scr;
     public bool isLanded = false;
     // Start is called before the first frame update
@@ -59,6 +60,8 @@ public class Rocket : MonoBehaviour
         CameraFollow.scr.Target = GameObject.Find("Player").transform;
         CameraFollow.scr.targetC = true;
         isLanded = true;
+        fire.enableEmission = false;
+        //fire.Stop();
         yield return null;
 
     }

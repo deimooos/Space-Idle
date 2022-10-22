@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GlobalSettings : MonoBehaviour
 {
+    public GameObject colletiblesUI;
     public int foodCount=0;
     public int drinkCount=0;
     public int crystalCount=0;
@@ -25,6 +26,7 @@ public class GlobalSettings : MonoBehaviour
     public float boltsCount = 0;
     public float gasolineCount = 0;
     public bool gameFinished = false;
+   
     // Start is called before the first frame update
     private void Awake()
     {

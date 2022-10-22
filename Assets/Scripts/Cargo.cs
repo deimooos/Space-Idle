@@ -58,7 +58,8 @@ public class Cargo : MonoBehaviour
     {
         if(GlobalSettings.scr.coin>=price)
         {
-            Order.scr.steelCount++;
+            GlobalSettings.scr.steelCount++;
+            //Order.scr.steelCount++;
             GlobalSettings.scr.coin -= price;
         }
     }
@@ -66,7 +67,8 @@ public class Cargo : MonoBehaviour
     {
         if (GlobalSettings.scr.coin >= price)
         {
-            Order.scr.springCount++;
+            GlobalSettings.scr.springCount++;
+            //Order.scr.springCount++;
             GlobalSettings.scr.coin -= price;
         }
     }
@@ -74,7 +76,8 @@ public class Cargo : MonoBehaviour
     {
         if (GlobalSettings.scr.coin >= price)
         {
-            Order.scr.wrenchCount++;
+            GlobalSettings.scr.wrenchCount++;
+            //Order.scr.wrenchCount++;
             GlobalSettings.scr.coin -= price;
         }
     }
@@ -82,7 +85,8 @@ public class Cargo : MonoBehaviour
     {
         if (GlobalSettings.scr.coin >= price)
         {
-            Order.scr.gearCount++;
+            GlobalSettings.scr.gearCount++;
+            //Order.scr.gearCount++;
             GlobalSettings.scr.coin -= price;
         }
     }
@@ -90,7 +94,8 @@ public class Cargo : MonoBehaviour
     {
         if (GlobalSettings.scr.coin >= price)
         {
-            Order.scr.boltsCount++;
+            GlobalSettings.scr.boltsCount++;
+            //Order.scr.boltsCount++;
             GlobalSettings.scr.coin -= price;
         }
     }
@@ -98,7 +103,8 @@ public class Cargo : MonoBehaviour
     {
         if (GlobalSettings.scr.coin >= price)
         {
-            Order.scr.gasolineCount++;
+            GlobalSettings.scr.gasolineCount++;
+            //Order.scr.gasolineCount++;
             GlobalSettings.scr.coin -= price;
         }
     }

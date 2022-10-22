@@ -18,12 +18,12 @@ public class BuildingUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        neededRock = transform.parent.parent.parent.GetComponent<Building>().neededRock;
-        neededRockLv2 = transform.parent.parent.parent.GetComponent<Building>().neededRockLv2;
-        neededRockLv3 = transform.parent.parent.parent.GetComponent<Building>().neededRockLv3;
-        neededWood = transform.parent.parent.parent.GetComponent<Building>().neededWood;
-        neededWoodLv2 = transform.parent.parent.parent.GetComponent<Building>().neededWoodLv2;
-        neededWoodLv3 = transform.parent.parent.parent.GetComponent<Building>().neededWoodLv3;
+        neededRock = transform.parent.parent.parent.parent.GetComponent<Building>().neededRock;
+        neededRockLv2 = transform.parent.parent.parent.parent.GetComponent<Building>().neededRockLv2;
+        neededRockLv3 = transform.parent.parent.parent.parent.GetComponent<Building>().neededRockLv3;
+        neededWood = transform.parent.parent.parent.parent.GetComponent<Building>().neededWood;
+        neededWoodLv2 = transform.parent.parent.parent.parent.GetComponent<Building>().neededWoodLv2;
+        neededWoodLv3 = transform.parent.parent.parent.parent.GetComponent<Building>().neededWoodLv3;
 
 
     }
@@ -31,7 +31,7 @@ public class BuildingUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isLog && isCurrent)
+        /*if (isLog && isCurrent)
         {
             if (transform.parent.parent.parent.GetComponent<Building>().level == 0)
             {
@@ -90,9 +90,37 @@ public class BuildingUI : MonoBehaviour
             {
                 GetComponent<Text>().text = neededWoodLv3.ToString();
             }
+        }*/
+
+        if(isLog)
+        {
+            if (transform.parent.parent.parent.parent.GetComponent<Building>().level == 0)
+            {
+                GetComponent<Text>().text = transform.parent.parent.parent.parent.GetComponent<Building>().neededWood.ToString();
+            }
+            else if (transform.parent.parent.parent.parent.GetComponent<Building>().level == 1)
+            {
+                GetComponent<Text>().text = transform.parent.parent.parent.parent.GetComponent<Building>().neededWoodLv2.ToString();
+            }
+            else if (transform.parent.parent.parent.parent.GetComponent<Building>().level == 2)
+            {
+                GetComponent<Text>().text = transform.parent.parent.parent.parent.GetComponent<Building>().neededWoodLv3.ToString();
+            }
         }
-
-
-
+        else
+        {
+            if (transform.parent.parent.parent.parent.GetComponent<Building>().level == 0)
+            {
+                GetComponent<Text>().text = transform.parent.parent.parent.parent.GetComponent<Building>().neededRock.ToString();
+            }
+            else if (transform.parent.parent.parent.parent.GetComponent<Building>().level == 1)
+            {
+                GetComponent<Text>().text = transform.parent.parent.parent.parent.GetComponent<Building>().neededRockLv2.ToString();
+            }
+            else if (transform.parent.parent.parent.parent.GetComponent<Building>().level == 2)
+            {
+                GetComponent<Text>().text = transform.parent.parent.parent.parent.GetComponent<Building>().neededRockLv3.ToString();
+            }
+        }
     }
 }
