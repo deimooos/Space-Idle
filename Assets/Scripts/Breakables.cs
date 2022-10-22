@@ -1,6 +1,8 @@
+using HighlightPlus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Breakables : MonoBehaviour
 {
@@ -14,9 +16,13 @@ public class Breakables : MonoBehaviour
     void Start()
     {
         animPlayer = CharacterMove.scr.transform.GetChild(0).GetComponent<Animator>();
+        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = 1;
     }
     private void OnTriggerStay(Collider other)
     {
+        transform.GetChild(1).gameObject.SetActive(true);
+        GetComponent<HighlightEffect>().enabled = true;
         if (gameObject.GetComponent<Collider>().enabled == true)
         {
             if (CharacterMove.scr.isRunning)
@@ -53,10 +59,16 @@ public class Breakables : MonoBehaviour
             //CharacterMove.scr.transform.GetChild(0).GetComponent<Animator>().enabled = true;
             CharacterMove.scr.axe.SetActive(false);
             CharacterMove.scr.pickaxe.SetActive(false);
+        }  
+        if(isHitting==true)
+        {
+            transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = Mathf.Lerp(transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount,health/100, Time.deltaTime*1.467f);
         }
     }
     private void OnTriggerExit(Collider other)
     {
+        transform.GetChild(1).gameObject.SetActive(false);
+        GetComponent<HighlightEffect>().enabled = false;
         animPlayer.SetBool("isCutting", false);
         animPlayer.SetBool("isMining", false);
         //CharacterMove.scr.transform.GetChild(0).GetComponent<Animator>().enabled = true;
@@ -100,6 +112,10 @@ public class Breakables : MonoBehaviour
             CharacterMove.scr.axe.SetActive(false);
             CharacterMove.scr.pickaxe.SetActive(false);
 
+        }
+        if (health <=0)
+        {
+            transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
