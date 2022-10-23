@@ -16,7 +16,7 @@ public class CharacterMove : MonoBehaviour
     public GameObject carrier;
     public GameObject capacityText;
     public GameObject carryText;
-
+    public GameObject Helmet;
 
     void Awake()
     {
@@ -32,8 +32,12 @@ public class CharacterMove : MonoBehaviour
     // Update is called once per frame
     
     void FixedUpdate()
-    { 
-            moveSpeed = GlobalSettings.scr.moveSpeed;
+    {
+        capacityText.SetActive(transform.GetChild(1).GetComponent<Renderer>().enabled);
+        carryText.SetActive(transform.GetChild(1).GetComponent<Renderer>().enabled);
+        Helmet.SetActive(transform.GetChild(1).GetComponent<Renderer>().enabled);
+
+        moveSpeed = GlobalSettings.scr.moveSpeed;
             /*if(gameObject.GetComponent<MeshRenderer>())
             paintSphere.Color = gameObject.GetComponent<MeshRenderer>().sharedMaterial.color;*/
 
@@ -59,18 +63,18 @@ public class CharacterMove : MonoBehaviour
                 if (moveDir != Vector3.zero)
                 {
 
-                    /*Quaternion targetRotation = Quaternion.LookRotation(moveDir);
-                    transform.rotation = Quaternion.Slerp(curRotation, targetRotation, 10f * Time.deltaTime);*/
-                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir), 10 * Time.deltaTime);                  
+                    Quaternion targetRotation = Quaternion.LookRotation(moveDir);
+                    transform.rotation = Quaternion.Slerp(curRotation, targetRotation, 10f * Time.deltaTime);
+                    //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir), 10 * Time.deltaTime);                  
                     isRunning = true;
                 }
                 //rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * moveSpeed * Time.deltaTime);
             }
             else
             {
-                rb.velocity = new Vector3(0,
-                      rb.velocity.y,
-                      0);
+            rb.velocity = new Vector3(0,
+                  rb.velocity.y,
+                  0);
                 isRunning = false;
                 anim.SetBool("isRunning", false);
 

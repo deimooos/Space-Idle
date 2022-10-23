@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
+    public GameObject bar;
     public bool isWaiting = false;
     public int level1needed;
     public int level2needed;
@@ -55,12 +56,16 @@ public class Building : MonoBehaviour
         {
             case buildType.Mine:
                 productType = crystal;
+                bar = GlobalSettings.scr.crystal;
                 break;
+
             case buildType.Food:
                 productType = food;
+                bar = GlobalSettings.scr.food;
                 break;
             case buildType.Drink:
                 productType = drink;
+                bar = GlobalSettings.scr.drink;
                 break;
 
 
@@ -213,7 +218,7 @@ public class Building : MonoBehaviour
     }
     IEnumerator wait()
     {
-        if (GlobalSettings.scr.carries[0] != null && !isWaiting)
+        if (GlobalSettings.scr.carries.Count > 0 && !isWaiting)
         {
             isWaiting = true;
             for (int i = GlobalSettings.scr.carries.Count - 1; i >= 0; i--)

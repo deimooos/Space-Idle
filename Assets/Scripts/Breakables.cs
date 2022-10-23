@@ -15,7 +15,7 @@ public class Breakables : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animPlayer = CharacterMove.scr.transform.GetChild(0).GetComponent<Animator>();
+        animPlayer = CharacterMove.scr.anim;
         transform.GetChild(1).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = 1;
     }

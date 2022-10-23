@@ -5,7 +5,8 @@ using UnityEngine;
 public class BuildingCollect : MonoBehaviour
 {
     public bool canAnimate = true;
-
+    public GameObject building;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,10 @@ public class BuildingCollect : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (transform.parent.GetComponent<Building>().productCount > 0)
+        { 
+            transform.parent.GetComponent<Building>().bar.SetActive(true);
+        }
         if (transform.parent.GetComponent<Building>().type == Building.buildType.Mine)
         {
             GlobalSettings.scr.crystalCount += transform.parent.GetComponent<Building>().productCount;
@@ -67,15 +72,15 @@ public class BuildingCollect : MonoBehaviour
         //Vector3 endPos = log.transform.position + new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
         while (elapsetTime < waitTime)
         {
-            product.transform.position = Vector3.Lerp(startPos, Camera.main.ScreenToWorldPoint(GlobalSettings.scr.colletiblesUI.transform.position)  ,elapsetTime / waitTime);
+            product.transform.position = Vector3.Lerp(startPos, Camera.main.ScreenToWorldPoint(transform.parent.GetComponent<Building>().bar.transform.GetChild(3).position) ,elapsetTime / waitTime);
             elapsetTime += Time.deltaTime;
             yield return null;
         }
-        product.transform.position = Camera.main.ScreenToWorldPoint(GlobalSettings.scr.colletiblesUI.transform.position);
+        product.transform.position = Camera.main.ScreenToWorldPoint(transform.parent.GetComponent<Building>().bar.transform.GetChild(3).position);
         product.SetActive(false);
         transform.parent.GetComponent<Building>().products.Remove(product);
         if (canAnimate)
-        StartCoroutine(popUp(GlobalSettings.scr.colletiblesUI));
+        StartCoroutine(popUp(transform.parent.GetComponent<Building>().bar.transform.GetChild(3).gameObject));
         yield return null;
 
 

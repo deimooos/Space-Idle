@@ -52,13 +52,17 @@ public class Cargo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
     public void steelAmount()
     {
         if(GlobalSettings.scr.coin>=price)
         {
             GlobalSettings.scr.steelCount++;
+            if (GlobalSettings.scr.steelCount > 0)
+            {
+                GlobalSettings.scr.steel.SetActive(true);
+            }
             //Order.scr.steelCount++;
             GlobalSettings.scr.coin -= price;
         }
@@ -68,6 +72,10 @@ public class Cargo : MonoBehaviour
         if (GlobalSettings.scr.coin >= price)
         {
             GlobalSettings.scr.springCount++;
+            if (GlobalSettings.scr.springCount > 0)
+            {
+                GlobalSettings.scr.spring.SetActive(true);
+            }
             //Order.scr.springCount++;
             GlobalSettings.scr.coin -= price;
         }
@@ -77,6 +85,10 @@ public class Cargo : MonoBehaviour
         if (GlobalSettings.scr.coin >= price)
         {
             GlobalSettings.scr.wrenchCount++;
+            if (GlobalSettings.scr.wrenchCount > 0)
+            {
+                GlobalSettings.scr.wrench.SetActive(true);
+            }
             //Order.scr.wrenchCount++;
             GlobalSettings.scr.coin -= price;
         }
@@ -86,6 +98,10 @@ public class Cargo : MonoBehaviour
         if (GlobalSettings.scr.coin >= price)
         {
             GlobalSettings.scr.gearCount++;
+            if (GlobalSettings.scr.gearCount > 0)
+            {
+                GlobalSettings.scr.gear.SetActive(true);
+            }
             //Order.scr.gearCount++;
             GlobalSettings.scr.coin -= price;
         }
@@ -95,6 +111,10 @@ public class Cargo : MonoBehaviour
         if (GlobalSettings.scr.coin >= price)
         {
             GlobalSettings.scr.boltsCount++;
+            if (GlobalSettings.scr.boltsCount > 0)
+            {
+                GlobalSettings.scr.bolts.SetActive(true);
+            }
             //Order.scr.boltsCount++;
             GlobalSettings.scr.coin -= price;
         }
@@ -104,6 +124,10 @@ public class Cargo : MonoBehaviour
         if (GlobalSettings.scr.coin >= price)
         {
             GlobalSettings.scr.gasolineCount++;
+            if (GlobalSettings.scr.gasolineCount > 0)
+            {
+                GlobalSettings.scr.gasoline.SetActive(true);
+            }
             //Order.scr.gasolineCount++;
             GlobalSettings.scr.coin -= price;
         }

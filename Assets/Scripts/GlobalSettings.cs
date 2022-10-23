@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class GlobalSettings : MonoBehaviour
 {
+    public GameObject crystal;
+    public GameObject drink;
+    public GameObject food;
+    public GameObject wrench;
+    public GameObject gear;
+    public GameObject bolts;
+    public GameObject gasoline;
+    public GameObject spring;
+    public GameObject steel;
     public GameObject colletiblesUI;
     public int foodCount=0;
     public int drinkCount=0;
@@ -19,12 +28,12 @@ public class GlobalSettings : MonoBehaviour
     public float pickaxeDamage;
     public int carryAmount;
     public List<GameObject> carries;
-    public float steelCount = 0;
-    public float springCount = 0;
-    public float wrenchCount = 0;
-    public float gearCount = 0;
-    public float boltsCount = 0;
-    public float gasolineCount = 0;
+    public int steelCount = 0;
+    public int springCount = 0;
+    public int wrenchCount = 0;
+    public int gearCount = 0;
+    public int boltsCount = 0;
+    public int gasolineCount = 0;
     public bool gameFinished = false;
    
     // Start is called before the first frame update

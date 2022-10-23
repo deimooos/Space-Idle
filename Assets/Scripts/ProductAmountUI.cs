@@ -10,7 +10,13 @@ public class ProductAmountUI : MonoBehaviour
     {
         crystal,
         drink,
-        food
+        food,
+        gear,
+        steel,
+        spring,
+        wrench,
+        gasoline,
+        bolts
     }
     public productType product = productType.crystal;
     void Start()
@@ -32,6 +38,26 @@ public class ProductAmountUI : MonoBehaviour
             case productType.food:
                 GetComponent<Text>().text = GlobalSettings.scr.foodCount.ToString();
                 break;
+            case productType.steel:
+                GetComponent<Text>().text = GlobalSettings.scr.steelCount.ToString();
+                break;
+            case productType.gear:
+                GetComponent<Text>().text = GlobalSettings.scr.gearCount.ToString();
+                break;
+            case productType.spring:
+                GetComponent<Text>().text = GlobalSettings.scr.springCount.ToString();
+                break;
+            case productType.wrench:
+                GetComponent<Text>().text = GlobalSettings.scr.wrenchCount.ToString();
+                break;
+            case productType.gasoline:
+                GetComponent<Text>().text = GlobalSettings.scr.gasolineCount.ToString();
+                break;
+            case productType.bolts:
+                GetComponent<Text>().text = GlobalSettings.scr.boltsCount.ToString();
+                break;
+
+
             default:
                 break;
         }
