@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class CollectingOrders : MonoBehaviour
-{
+public class CollectingOrders : MonoBehaviour
+{/*
     // Start is called before the first frame update
     void Start()
     {
@@ -37,3 +37,4 @@ using UnityEngine;
     }
 }
 */
+}

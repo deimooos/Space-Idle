@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0016631836, g: 0.0016315943, b: 0.0016631836, a: 1}
+  m_IndirectSpecularColor: {r: 0.0016111481, g: 0.0016111481, b: 0.0016111481, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1218,6 +1218,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9427851410133774, guid: e180d72f3e0f4074baf584af249e882c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9427851410133774, guid: e180d72f3e0f4074baf584af249e882c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 353531318543644122, guid: e180d72f3e0f4074baf584af249e882c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1348,6 +1356,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4905911354135483832, guid: e180d72f3e0f4074baf584af249e882c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.57
+      objectReference: {fileID: 0}
     - target: {fileID: 4905911354882151647, guid: e180d72f3e0f4074baf584af249e882c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1377,6 +1390,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985179740101542259, guid: e180d72f3e0f4074baf584af249e882c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985179740101542259, guid: e180d72f3e0f4074baf584af249e882c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696655796103177823, guid: e180d72f3e0f4074baf584af249e882c,
+        type: 3}
+      propertyPath: rmsCount
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2608831120404407902, guid: e180d72f3e0f4074baf584af249e882c, type: 3}
@@ -2502,6 +2530,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37cbab528f2e85b498e87086690dc49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crystal: {fileID: 0}
+  drink: {fileID: 0}
+  food: {fileID: 0}
+  wrench: {fileID: 0}
+  gear: {fileID: 0}
+  bolts: {fileID: 0}
+  gasoline: {fileID: 0}
+  spring: {fileID: 0}
+  steel: {fileID: 0}
   colletiblesUI: {fileID: 1731327380}
   foodCount: 0
   drinkCount: 0
@@ -5588,7 +5625,7 @@ MonoBehaviour:
   tutorialLevels: 
   Testing: 1
   lvl: 
-  TestLevel: {fileID: 1458543342866950086, guid: e180d72f3e0f4074baf584af249e882c,
+  TestLevel: {fileID: 7288599244689920316, guid: 75b12484f5853394f89c486ab922cba7,
     type: 3}
 --- !u!4 &939535673
 Transform:

@@ -62,7 +62,7 @@ public class Breakables : MonoBehaviour
         }  
         if(isHitting==true)
         {
-            transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = Mathf.Lerp(transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount,health/100, Time.deltaTime*1.467f);
+            StartCoroutine(interact());
         }
     }
     private void OnTriggerExit(Collider other)
@@ -183,6 +183,17 @@ public class Breakables : MonoBehaviour
             yield return null;
         }
         log.GetComponent<Collider>().enabled = true;
+        yield return null;
+    }
+    IEnumerator interact()
+    {
+        float elapsedTime = 0;
+        float waitTime = 0.5f;
+        while(elapsedTime<waitTime)
+        {
+            transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = Mathf.Lerp(transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount, health / 100, Time.deltaTime*2);
+            yield return null;
+        }
         yield return null;
     }
 }
