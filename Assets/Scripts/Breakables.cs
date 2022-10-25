@@ -188,10 +188,11 @@ public class Breakables : MonoBehaviour
     IEnumerator interact()
     {
         float elapsedTime = 0;
-        float waitTime = 0.5f;
-        while(elapsedTime<waitTime)
+        float waitTime = 0.1f;
+        float fillingAmount = transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount;
+        while (elapsedTime<waitTime)
         {
-            transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = Mathf.Lerp(transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount, health / 100, Time.deltaTime*2);
+            transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = Mathf.Lerp(fillingAmount, health / 100, Time.deltaTime*90);
             yield return null;
         }
         yield return null;
