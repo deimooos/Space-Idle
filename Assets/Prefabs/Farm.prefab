@@ -230,7 +230,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &5435987514888468495
 MonoBehaviour:
@@ -811,6 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canAnimate: 1
+  building: {fileID: 0}
 --- !u!1 &5444839020089836003
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +947,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806261572a866b24d912b1d14925c18a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bar: {fileID: 0}
+  isWaiting: 0
   level1needed: 0
   level2needed: 0
   level3needed: 0
@@ -1432,7 +1435,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &7626533334351746381
 MonoBehaviour:
