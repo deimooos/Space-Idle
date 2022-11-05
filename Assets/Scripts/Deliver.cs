@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class Deliver : MonoBehaviour
-{
+public class Deliver : MonoBehaviour
+{/*
     public static Deliver scr;
     public bool isLanded = false;
     // Start is called before the first frame update
@@ -65,3 +65,4 @@ using UnityEngine;
     
 }
 */
+}
