@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Breakables : MonoBehaviour
 {
+    public float time = 0.533f;
+    public float damage;
     public float health=100;
     bool isHitting = false;
     public bool isTree = true;
@@ -16,11 +18,16 @@ public class Breakables : MonoBehaviour
     void Start()
     {
         animPlayer = CharacterMove.scr.anim;
-        transform.GetChild(1).gameObject.SetActive(false);
-        transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = 1;
+        if(transform.childCount>1)
+        {
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = 1;
+        }
+        
     }
     private void OnTriggerStay(Collider other)
     {
+        if(transform.childCount>1)
         transform.GetChild(1).gameObject.SetActive(true);
         GetComponent<HighlightEffect>().enabled = true;
         if (gameObject.GetComponent<Collider>().enabled == true)
@@ -40,7 +47,8 @@ public class Breakables : MonoBehaviour
                 CharacterMove.scr.axe.SetActive(true);
                 animPlayer.SetBool("isCutting", true);
                 StartCoroutine(hit());
-                health -= GlobalSettings.scr.axeDamage;
+                //health -= GlobalSettings.scr.axeDamage;
+                damage = GlobalSettings.scr.axeDamage;
             }
             if (!CharacterMove.scr.isRunning && !isHitting && !isTree)
             {
@@ -49,24 +57,27 @@ public class Breakables : MonoBehaviour
                 CharacterMove.scr.pickaxe.SetActive(true);
                 animPlayer.SetBool("isMining", true);
                 StartCoroutine(hit());
-                health -= GlobalSettings.scr.pickaxeDamage;
+                //health -= GlobalSettings.scr.pickaxeDamage;
+                damage = GlobalSettings.scr.pickaxeDamage;
             }
         }
         else
         {
             animPlayer.SetBool("isCutting", false);
             animPlayer.SetBool("isMining", false);
+            time = 0.533f;
             //CharacterMove.scr.transform.GetChild(0).GetComponent<Animator>().enabled = true;
             CharacterMove.scr.axe.SetActive(false);
             CharacterMove.scr.pickaxe.SetActive(false);
         }  
-        if(isHitting==true)
+        /*if(isHitting==true)
         {
             StartCoroutine(interact());
-        }
+        }*/
     }
     private void OnTriggerExit(Collider other)
     {
+        if(transform.childCount>1)
         transform.GetChild(1).gameObject.SetActive(false);
         GetComponent<HighlightEffect>().enabled = false;
         animPlayer.SetBool("isCutting", false);
@@ -115,6 +126,7 @@ public class Breakables : MonoBehaviour
         }
         if (health <=0)
         {
+            if(transform.childCount>1)
             transform.GetChild(1).gameObject.SetActive(false);
         }
     }
@@ -122,15 +134,19 @@ public class Breakables : MonoBehaviour
     IEnumerator hit()
     {
         isHitting = true;
-        float elapsetTime = 0;
-        float waitTime = 1;
+        /*float elapsetTime = 0;
+        float waitTime = 1.466f;
         while (elapsetTime<waitTime)
         {
             elapsetTime += Time.deltaTime;
             yield return null;
-        }
+        }*/
+        yield return new WaitForSeconds(time);
+        health -= damage;
+        StartCoroutine(interact());
+        time = 1.466f;
         isHitting = false;
-        yield return null;
+        //yield return null;
     }
     IEnumerator logs()
     {
@@ -188,13 +204,16 @@ public class Breakables : MonoBehaviour
     IEnumerator interact()
     {
         float elapsedTime = 0;
-        float waitTime = 0.1f;
+        float waitTime = 0.2f;
         float fillingAmount = transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount;
         while (elapsedTime<waitTime)
         {
-            transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = Mathf.Lerp(fillingAmount, health / 100, Time.deltaTime*90);
+            transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = Mathf.Lerp(fillingAmount, health / 100, elapsedTime/waitTime);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
         yield return null;
+        /*transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = health / 100;
+        yield return null;*/
     }
 }
