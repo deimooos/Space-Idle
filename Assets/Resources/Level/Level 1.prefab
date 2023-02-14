@@ -896,10 +896,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1873612434294898795}
     m_Modifications:
+    - target: {fileID: 1212490563163838658, guid: 06b2435cdd8fd5541bb89797ddf58f13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422333433680953155, guid: 06b2435cdd8fd5541bb89797ddf58f13,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422333433680953155, guid: 06b2435cdd8fd5541bb89797ddf58f13,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6003181784270234692, guid: 06b2435cdd8fd5541bb89797ddf58f13,
         type: 3}
       propertyPath: m_Name
       value: Mines (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003181784270234692, guid: 06b2435cdd8fd5541bb89797ddf58f13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6003181784270234693, guid: 06b2435cdd8fd5541bb89797ddf58f13,
         type: 3}
@@ -1004,7 +1024,7 @@ PrefabInstance:
     - target: {fileID: 196001788100052151, guid: 34d06011b367d6141bb33ddf73b1e35c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.33
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 196001788100052151, guid: 34d06011b367d6141bb33ddf73b1e35c,
         type: 3}
