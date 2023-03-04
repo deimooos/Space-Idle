@@ -4266,22 +4266,22 @@ PrefabInstance:
     - target: {fileID: 1377211245189919279, guid: deb1d563f027dcc4baff9aae23de691b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.015
+      value: 0.024
       objectReference: {fileID: 0}
     - target: {fileID: 1377211245189919279, guid: deb1d563f027dcc4baff9aae23de691b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0125
+      value: 0.020000001
       objectReference: {fileID: 0}
     - target: {fileID: 1377211245189919279, guid: deb1d563f027dcc4baff9aae23de691b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0125
+      value: 0.020000001
       objectReference: {fileID: 0}
     - target: {fileID: 1377211245189919279, guid: deb1d563f027dcc4baff9aae23de691b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0731
+      value: 0.0926
       objectReference: {fileID: 0}
     - target: {fileID: 1377211245189919279, guid: deb1d563f027dcc4baff9aae23de691b,
         type: 3}
@@ -4291,7 +4291,7 @@ PrefabInstance:
     - target: {fileID: 1377211245189919279, guid: deb1d563f027dcc4baff9aae23de691b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0381
+      value: 0.0498
       objectReference: {fileID: 0}
     - target: {fileID: 1377211245189919279, guid: deb1d563f027dcc4baff9aae23de691b,
         type: 3}
