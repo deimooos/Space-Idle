@@ -6,6 +6,7 @@ using StandardAssets;
 public class Rocket : MonoBehaviour
 {
     public ParticleSystem fire;
+    public ParticleSystem ember;
     public static Rocket scr;
     public bool isLanded = false;
     // Start is called before the first frame update
@@ -61,12 +62,15 @@ public class Rocket : MonoBehaviour
         CameraFollow.scr.targetC = true;
         isLanded = true;
         fire.enableEmission = false;
+        ember.enableEmission = false;
         //fire.Stop();
         yield return null;
 
     }
     IEnumerator flying()
     {
+        fire.enableEmission = true;
+        ember.enableEmission = true;
         GameObject.Find("Player").transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().enabled = false;
         float elapsedTime = 0;
         float waitTime = 3;

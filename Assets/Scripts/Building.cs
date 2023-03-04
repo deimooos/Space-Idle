@@ -227,6 +227,7 @@ public class Building : MonoBehaviour
                 {
                     if (level == 0)
                     {
+                        
                         if (GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededWood > 0)
                         {
                             StartCoroutine(give(GlobalSettings.scr.carries[i]));
@@ -236,42 +237,43 @@ public class Building : MonoBehaviour
 
                         }
                         else if (!GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededRock > 0)
-                        {
+                        {                              
                             StartCoroutine(give(GlobalSettings.scr.carries[i]));
                             neededRock--;
                             yield return new WaitForSeconds(0.1f);
                         }
+                        
                     }
                     if (level == 1)
                     {
-                        if (GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededWoodLv2 > 0)
-                        {
-                            StartCoroutine(give(GlobalSettings.scr.carries[i]));
-                            neededWoodLv2--;
-                            yield return new WaitForSeconds(0.1f);
-                        }
-                        else if (!GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededRockLv2 > 0)
-                        {
-                            StartCoroutine(give(GlobalSettings.scr.carries[i]));
-                            neededRockLv2--;
-                            yield return new WaitForSeconds(0.1f);
-                        }
+                            if (GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededWoodLv2 > 0)
+                            {
+                                StartCoroutine(give(GlobalSettings.scr.carries[i]));
+                                neededWoodLv2--;
+                                yield return new WaitForSeconds(0.1f);
+                            }
+                            else if (!GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededRockLv2 > 0)
+                            {
+                                StartCoroutine(give(GlobalSettings.scr.carries[i]));
+                                neededRockLv2--;
+                                yield return new WaitForSeconds(0.1f);
+                            }
                     }
                     if (level == 2)
                     {
-                        if (GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededWoodLv3 > 0)
-                        {
-                            StartCoroutine(give(GlobalSettings.scr.carries[i]));
-                            neededWoodLv3--;
-                            yield return new WaitForSeconds(0.1f);
-                        }
-                        else if (!GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededRockLv3 > 0)
-                        {
-                            StartCoroutine(give(GlobalSettings.scr.carries[i]));
-                            neededRockLv3--;
-                            yield return new WaitForSeconds(0.1f);
+                            if (GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededWoodLv3 > 0)
+                            {
+                                StartCoroutine(give(GlobalSettings.scr.carries[i]));
+                                neededWoodLv3--;
+                                yield return new WaitForSeconds(0.1f);
+                            }
+                            else if (!GlobalSettings.scr.carries[0].GetComponent<Collect>().isLog && neededRockLv3 > 0)
+                            {
+                                StartCoroutine(give(GlobalSettings.scr.carries[i]));
+                                neededRockLv3--;
+                                yield return new WaitForSeconds(0.1f);
 
-                        }
+                            }
                     }
                 }
                     //StartCoroutine(give(GlobalSettings.scr.carries[i]));
