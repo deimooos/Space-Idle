@@ -2343,9 +2343,9 @@ MonoBehaviour:
   steel: {fileID: 566987449}
   colletiblesUI: {fileID: 1731327380}
   foodCount: 0
-  drinkCount: 0
-  crystalCount: 0
-  coin: 0
+  drinkCount: 20
+  crystalCount: 20
+  coin: 1000
   player: {fileID: 0}
   upgradeCanvas: {fileID: 642302709}
   marketCanvas: {fileID: 268653938}
