@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water
+  m_Name: Water2
   m_Shader: {fileID: 4800000, guid: 452df626e52b91642afa91d1a360014b, type: 3}
   m_ValidKeywords:
   - _ALPHABLEND_ON
@@ -141,7 +141,7 @@ Material:
     - _WaterDepthCutoff: 5.25
     - _WaveAmount: 0.969
     - _WaveSpeed: 0.5
-    - _WaveStrength: 0.05
+    - _WaveStrength: 0.25
     - _WaveUseWorld: 0
     - _ZWrite: 0
     m_Colors:
@@ -152,7 +152,7 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SColor: {r: 0.24999997, g: 0.24999997, b: 0.24999997, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _WaterColorDeep: {r: 0.14509803, g: 0.87148947, b: 1, a: 0.95686275}
+    - _WaterColorDeep: {r: 0.07058824, g: 0.5991186, b: 0.9137255, a: 0.95686275}
     - _WaterColorFoam: {r: 1, g: 1, b: 1, a: 1}
     - _WaterColorShallow: {r: 0.4292453, g: 1, b: 1, a: 0.95686275}
   m_BuildTextureStacks: []
